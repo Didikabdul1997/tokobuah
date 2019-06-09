@@ -69,7 +69,8 @@
                             <a href="<?php echo site_url('admin/products/edit/'.$product->product_id) ?>" class="btn btn-small">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
-                            <a onclick="deleteConfirm('<?php echo site_url('admin/products/delete/'.$product->product_id) ?>')" href="#!" class="btn btn-small text-tanger">
+                            <a onclick="deleteConfirm('<?php echo site_url('admin/products/delete/'.$product->product_id) ?>')"
+                             href="#!" class="btn btn-small text-tanger">
                                 <i class="fas fa-trash"> Hapus</i>
                             </a>
                         </td>
@@ -112,5 +113,13 @@
   ?>
 
 </body>
+
+//hapus 
+<script>
+  function deleteConfirm(url){
+    $('#btn-delete').attr('href', url);
+    $('#deleteModal').modal();
+  }
+</script>
 
 </html>

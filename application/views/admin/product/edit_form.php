@@ -44,10 +44,14 @@
             </a>
           <div class="card-body">
 
-            <form action="<?php base_url('admin/products/add') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php base_url('admin/products/edit') ?>" method="post" enctype="multipart/form-data">
+                
+                <input type="hidden" name="id" value="<?php echo $product->product_id?>" />
+
                 <div class="form-group">
                     <label for="name">Name*</label>
-                    <input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>" type="text" name="name" placeholder="Product name" />
+                    <input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>" type="text"
+                    value="<?php echo $product->name; ?>" name="name" placeholder="Product name" />
                     <div class="invalid-feedback">
                         <?php echo form_error('name'); ?>
                     </div>
@@ -55,8 +59,8 @@
 
                 <div class="form-group">
                     <label for="price">Price*</label>
-                    <input class="form-control <?php echo form_error('price') ? 'is-invalid':'' ?>"
-                     type="number" name="price" min="0" placeholder="Product price" />
+                    <input class="form-control <?php echo form_error('price') ? 'is-invalid':'' ?>" type="number"
+                    value="<?php echo $product->price; ?>" name="price" min="0" placeholder="Product price" />
                     <div class="invalid-feedback">
                         <?php echo form_error('price'); ?>
                     </div>
@@ -64,8 +68,9 @@
 
                 <div class="form-group">
                     <label for="photo">Photo</label>
-                    <input class="form-control <?php echo form_error('photo') ? 'is-invalid':'' ?>"
-                     type="file" name="image" />
+                    <input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
+                    type="file" name="image" />
+                    <input type="hidden" name="old_image" values="<?php echo $product->image; ?>"/>
                     <div class="invalid-feedback">
                         <?php echo form_error('image'); ?>
                     </div>
@@ -74,7 +79,7 @@
                 <div class="form-group">
                     <label for="description">Description*</label>
                     <textarea class="form-control <?php echo form_error('description') ? 'is-invalid':'' ?>"
-                     name="description" placeholder="Product Description..."></textarea>
+                     name="description" placeholder="Product Description..."><?php echo $product->description; ?></textarea>
                     <div class="invalid-feedback">
                         <?php echo form_error('description'); ?>
                     </div>
