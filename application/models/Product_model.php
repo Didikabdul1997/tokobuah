@@ -80,7 +80,7 @@ class Product_model extends CI_Model
 
     private function _uploadImage()
     {
-        $config['upload_path']  = './upload/product';
+        $config['upload_path']  = './assets/upload/product';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
         $config['file_name']    = $this->product_id;
         $config['overwrite']    = true;
@@ -103,7 +103,7 @@ class Product_model extends CI_Model
         $product = $this->getById($id);
         if ($product->image != "default.jpg") {
             $filename = explode(".", $product->image)[0];
-            return array_map('unlink', glob(FCPATH . "upload/product/$filename.*"));
+            return array_map('unlink', glob(FCPATH . "assets/upload/product/$filename.*"));
         }
     }
 }

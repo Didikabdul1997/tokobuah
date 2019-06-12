@@ -5,14 +5,14 @@
 <meta name="author" content="">
 
 <title>
-    <?php echo SITE_NAME ." : ". ucfirst($this->uri->segment(1)) ." - ". ucfirst($this->uri->segment(2)) ?>
+    <?php echo SITE_NAME . " : " . ucfirst($this->uri->segment(1)) . " - " . ucfirst($this->uri->segment(2)) ?>
 </title>
 
 <!-- Custom fonts for this template-->
-<link href="<?= base_url(); ?>assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="<?= base_url(); ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
 <!-- Page level plugin CSS-->
-<link href="<?= base_url(); ?>assets/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+<link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
 <!-- Custom styles for this template-->
-<link href="<?= base_url(); ?>css/sb-admin.css" rel="stylesheet">
+<link href="<?= base_url(); ?>assets/css/sb-admin.css" rel="stylesheet">
